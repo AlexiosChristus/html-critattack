@@ -1,0 +1,9 @@
+.main-header {
+  padding: 20px;
+  color: white;
+  background: var(--accent);
+}
+.main-header ul {
+  display: flex;
+  gap: 1rem;
+}/*# sourceMappingURL=main-header.css.map */

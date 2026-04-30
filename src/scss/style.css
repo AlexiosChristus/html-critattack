@@ -1,8 +1,5 @@
-// @use "blocks/variables"; 
-// @use "blocks/base";
-// @use "blocks/main-header";
-
-    /* ==============================
+@charset "UTF-8";
+/* ==============================
    CSS VARIABLES — основные цвета и размеры
 ================================= */
 :root {
@@ -55,7 +52,6 @@ img {
 /* ==============================
    HEADER — шапка сайта
 ================================= */
-
 /* Фиксирует шапку сверху */
 .header {
   position: sticky;
@@ -143,7 +139,6 @@ img {
 /* ==============================
    HERO — главный первый экран
 ================================= */
-
 /* Отступы hero-секции */
 .hero {
   padding-block: 56px 36px;
@@ -166,9 +161,7 @@ img {
   padding: 32px;
   overflow: hidden;
   border-radius: var(--border-radius);
-  background:
-    linear-gradient(180deg, rgba(17, 18, 23, 0.1), rgba(17, 18, 23, 0.96)),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80") center/cover;
+  background: linear-gradient(180deg, rgba(17, 18, 23, 0.1), rgba(17, 18, 23, 0.96)), url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80") center/cover;
   border: 1px solid var(--color-border);
 }
 
@@ -228,16 +221,12 @@ img {
 
 /* Фон первой маленькой карточки */
 .small-feature:nth-child(1) {
-  background:
-    linear-gradient(180deg, rgba(17, 18, 23, 0.08), rgba(17, 18, 23, 0.94)),
-    url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: linear-gradient(180deg, rgba(17, 18, 23, 0.08), rgba(17, 18, 23, 0.94)), url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80") center/cover;
 }
 
 /* Фон второй маленькой карточки */
 .small-feature:nth-child(2) {
-  background:
-    linear-gradient(180deg, rgba(17, 18, 23, 0.08), rgba(17, 18, 23, 0.94)),
-    url("https://images.unsplash.com/photo-1556438064-2d7646166914?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: linear-gradient(180deg, rgba(17, 18, 23, 0.08), rgba(17, 18, 23, 0.94)), url("https://images.unsplash.com/photo-1556438064-2d7646166914?auto=format&fit=crop&w=900&q=80") center/cover;
 }
 
 /* Заголовок маленькой карточки */
@@ -257,7 +246,6 @@ img {
 /* ==============================
    MAIN LAYOUT — основная сетка
 ================================= */
-
 /* Отступы основной части */
 .main {
   padding-block: 24px 72px;
@@ -306,7 +294,6 @@ img {
 /* ==============================
    ARTICLE CARDS — карточки статей
 ================================= */
-
 /* Сетка карточек */
 .articles-grid {
   display: grid;
@@ -333,7 +320,8 @@ img {
 .article-card__image {
   width: 100%;
   height: 170px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* Внутренний отступ карточки */
@@ -386,7 +374,8 @@ img {
   width: 100%;
   height: 150px;
   border-radius: 14px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* Заголовок широкой карточки */
@@ -413,7 +402,6 @@ img {
 /* ==============================
    SIDEBAR — боковая панель
 ================================= */
-
 /* Фиксирует сайдбар при скролле */
 .sidebar {
   position: sticky;
@@ -494,7 +482,6 @@ img {
 /* ==============================
    GAMES — карточки игр
 ================================= */
-
 /* Сетка игр */
 .games-grid {
   display: grid;
@@ -546,7 +533,6 @@ img {
 /* ==============================
    FOOTER — нижняя часть сайта
 ================================= */
-
 /* Футер сайта */
 .footer {
   padding-block: 36px;
@@ -571,76 +557,65 @@ img {
 /* ==============================
    RESPONSIVE — адаптация под планшеты
 ================================= */
-
 @media (max-width: 1000px) {
   /* Перестраивает hero и layout в одну колонку */
   .hero__grid,
   .layout {
     grid-template-columns: 1fr;
   }
-
   /* Отключает фиксирование сайдбара */
   .sidebar {
     position: static;
   }
-
   /* Делает карточки в 2 колонки */
   .articles-grid,
   .games-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 /* ==============================
    RESPONSIVE — адаптация под телефоны
 ================================= */
-
 @media (max-width: 720px) {
   /* Разрешает перенос элементов шапки */
   .header__inner {
     flex-wrap: wrap;
     padding-block: 16px;
   }
-
   /* Переносит меню вниз */
   .nav {
     order: 3;
     width: 100%;
     overflow-x: auto;
   }
-
   /* Не даёт пунктам меню сжиматься */
   .nav__list {
+    width: -moz-max-content;
     width: max-content;
   }
-
   /* Скрывает кнопку в шапке */
   .header__button {
     display: none;
   }
-
   /* Уменьшает hero-карточку */
   .hero-card {
     min-height: 380px;
     padding: 24px;
   }
-
   /* Перестраивает карточки в одну колонку */
   .articles-grid,
   .games-grid,
   .wide-card {
     grid-template-columns: 1fr;
   }
-
   /* Увеличивает картинку широкой карточки */
   .wide-card__image {
     height: 190px;
   }
-
   /* Перестраивает заголовки секций и футер */
   .section__header,
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
   }
-}
+}/*# sourceMappingURL=style.css.map */
