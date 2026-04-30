@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавить статью | CritAttack</title>
+  </head>
+
+  <body>
+    {{> my-header }}
+
+    <main>
+      <section class="add-article">
+        <div class="container">
+          <div class="add-article__header">
+            <span class="tag">Новый материал</span>
+            <h1 class="add-article__title">Добавить статью</h1>
+            <p class="add-article__description">
+              Заполни форму ниже, чтобы подготовить новый обзор, статью или гайд для публикации на CritAttack.
+            </p>
+          </div>
+
+          <form class="article-form">
+            <div class="article-form__grid">
+              <label class="article-form__field">
+                <span class="article-form__label">Название статьи</span>
+                <input
+                  class="article-form__input"
+                  type="text"
+                  placeholder="Например: Обзор Alan Wake 2"
+                />
+              </label>
+
+              <label class="article-form__field">
+                <span class="article-form__label">Категория</span>
+                <select class="article-form__input">
+                  <option>Обзор</option>
+                  <option>Статья</option>
+                  <option>Гайд</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="article-form__field">
+              <span class="article-form__label">Краткое описание</span>
+              <textarea
+                class="article-form__input article-form__textarea article-form__textarea--small"
+                placeholder="Короткое описание материала"
+              ></textarea>
+            </label>
+
+            <label class="article-form__field">
+              <span class="article-form__label">Текст статьи</span>
+              <textarea
+                class="article-form__input article-form__textarea"
+                placeholder="Основной текст статьи"
+              ></textarea>
+            </label>
+
+            <div class="article-form__bottom">
+              <p class="article-form__note">
+                Пока это демонстрационная форма. В будущем сюда можно подключить админ-панель или backend.
+              </p>
+
+              <button class="article-form__button" type="submit">
+                Отправить
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    {{> footer }}
+
+    <script type="module" src="./src/js/main.ts"></script>
+  </body>
+</html>

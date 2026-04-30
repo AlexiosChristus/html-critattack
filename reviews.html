@@ -2,21 +2,30 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>CritAttack</title>
+    <title>Обзоры | CritAttack</title>
+    <link rel="stylesheet" href="./src/scss/style.scss" />
   </head>
+
   <body>
-    
     {{> my-header }}
-    
-  <main>
-   
-    <div class="container main">
-      <h2 class="reviews">Reviews</h2>
 
-    </div>
-  </main>
+    <main>
+      <section class="catalog-page">
+        <div class="container">
+          <h1 class="catalog-page__title">Обзоры</h1>
+          <p class="catalog-page__description">
+            Все обзоры игр, опубликованные на CritAttack.
+          </p>
 
-          {{> footer }}
+          <div class="articles-grid">
+            <!-- сюда можно вставлять карточки обзоров -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{> footer }}
+
     <script type="module" src="./src/js/main.ts"></script>
   </body>
 </html>
