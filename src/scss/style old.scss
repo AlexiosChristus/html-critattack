@@ -1,5 +1,10 @@
-/* #region VARIABLES — основные цвета и размеры */
+// @use "blocks/variables"; 
+// @use "blocks/base";
+// @use "blocks/main-header";
 
+    /* ==============================
+   CSS VARIABLES — основные цвета и размеры
+================================= */
 :root {
   --color-dark: #111217;
   --color-dark-alt: #1a1c23;
@@ -14,9 +19,7 @@
   --transition: 0.2s ease;
 }
 
-/* #endregion VARIABLES — основные цвета и размеры */
-
-/* #region LIGHT THEME — светлая тема */
+/* #region LIGHT THEME */
 
 html[data-theme="light"] {
   --color-dark: #f1ede7;
@@ -24,7 +27,7 @@ html[data-theme="light"] {
   --color-card: #fffaf2;
   --color-accent: #d84a4a;
   --color-accent-hover: #ef5c5c;
-  --color-text: #bd8b3b;
+  --color-text: #292621;
   --color-muted: #7b7368;
   --color-border: #ded6ca;
 }
@@ -42,9 +45,7 @@ html[data-theme="light"] .article-form {
   box-shadow: 0 12px 36px rgba(70, 55, 35, 0.08);
 }
 
-/* #endregion LIGHT THEME — светлая тема */
-
-/* #region BASE — базовые стили */
+/* #endregion LIGHT THEME */
 
 /* Сброс стандартных отступов */
 * {
@@ -79,9 +80,9 @@ img {
   margin-inline: auto;
 }
 
-/* #endregion BASE — базовые стили */
-
-/* #region HEADER — шапка сайта */
+/* ==============================
+   HEADER — шапка сайта
+================================= */
 
 /* Фиксирует шапку сверху */
 .header {
@@ -245,9 +246,9 @@ img {
   }
 }
 
-/* #endregion HEADER — шапка сайта */
-
-/* #region HERO — главный первый экран */
+/* ==============================
+   HERO — главный первый экран
+================================= */
 
 /* Отступы hero-секции */
 .hero {
@@ -359,9 +360,9 @@ img {
   font-size: 14px;
 }
 
-/* #endregion HERO — главный первый экран */
-
-/* #region MAIN LAYOUT — основная сетка */
+/* ==============================
+   MAIN LAYOUT — основная сетка
+================================= */
 
 /* Отступы основной части */
 .main {
@@ -408,9 +409,9 @@ img {
   color: var(--color-accent-hover);
 }
 
-/* #endregion MAIN LAYOUT — основная сетка */
-
-/* #region ARTICLE CARDS — карточки статей */
+/* ==============================
+   ARTICLE CARDS — карточки статей
+================================= */
 
 /* Сетка карточек */
 .articles-grid {
@@ -515,9 +516,9 @@ img {
   font-weight: 800;
 }
 
-/* #endregion ARTICLE CARDS — карточки статей */
-
-/* #region SIDEBAR — боковая панель */
+/* ==============================
+   SIDEBAR — боковая панель
+================================= */
 
 /* Фиксирует сайдбар при скролле */
 .sidebar {
@@ -596,9 +597,10 @@ img {
   font-weight: 700;
 }
 
-/* #endregion SIDEBAR — боковая панель */
 
-/* #region FOOTER — нижняя часть сайта */
+/* ==============================
+   FOOTER — нижняя часть сайта
+================================= */
 
 /* Футер сайта */
 .footer {
@@ -621,9 +623,9 @@ img {
   font-weight: 800;
 }
 
-/* #endregion FOOTER — нижняя часть сайта */
-
-/* #region RESPONSIVE — адаптация главной страницы */
+/* ==============================
+   RESPONSIVE — адаптация под планшеты
+================================= */
 
 @media (max-width: 1000px) {
   /* Перестраивает hero и layout в одну колонку */
@@ -690,9 +692,9 @@ img {
   
 }
 
-/* #endregion RESPONSIVE — адаптация главной страницы */
-
-/* #region POST PAGE — страница материала */
+/* ==============================
+   POST PAGE — страница материала
+================================= */
 
 /* Общий блок страницы материала */
   .post-page {
@@ -1085,9 +1087,9 @@ img {
     }
   }
 
-/* #endregion POST PAGE — страница материала */
-
-/* #region ADD ARTICLE PAGE — страница добавления статьи */
+  /* ==============================
+   ADD ARTICLE PAGE — страница добавления статьи
+================================= */
 
 /* Общий блок страницы */
 .add-article {
@@ -1251,9 +1253,7 @@ img {
   scroll-margin-top: 110px;
 }
 
-/* #endregion ADD ARTICLE PAGE — страница добавления статьи */
-
-/* #region CONTACTS PAGE — страница контактов */
+/* #region CONTACTS PAGE */
 
 /* Страница контактов */
 .contacts-page {
@@ -1435,9 +1435,9 @@ img {
   }
 }
 
-/* #endregion CONTACTS PAGE — страница контактов */
+/* #endregion CONTACTS PAGE */
 
-/* #region CATALOG PAGE — страницы обзоров, статей и гайдов */
+/* #region CATALOG PAGE */
 
 /* Общая страница каталога */
 .catalog-page {
@@ -1634,9 +1634,7 @@ img {
   }
 }
 
-/* #endregion CATALOG PAGE — страницы обзоров, статей и гайдов */
-
-/* #region CATALOG FILTER BUTTONS — кнопки фильтра по тегам */
+/* #endregion CATALOG PAGE */
 
 /* javascript tags buttons*/
 
@@ -1663,10 +1661,6 @@ img {
   display: none;
 }
 
-/* #endregion CATALOG FILTER BUTTONS — кнопки фильтра по тегам */
-
-/* #region THEME TOGGLE — кнопка смены темы */
-
 /* Кнопка переключения темы */
 .theme-toggle {
   width: 44px;
@@ -1688,4 +1682,3 @@ img {
   transform: translateY(-2px);
 }
 
-/* #endregion THEME TOGGLE — кнопка смены темы */

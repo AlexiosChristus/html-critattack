@@ -16,11 +16,9 @@
         <div class="catalog-grid">
           <article class="catalog-card">
             <a href="/guides/how-to-choose-rpg-class.html">
-              <img
-                class="catalog-card__image"
+              <img class="catalog-card__image"
                 src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=900&q=80"
-                alt="Игровой персонаж"
-              />
+                alt="Игровой персонаж" />
             </a>
 
             <div class="catalog-card__body">
@@ -46,11 +44,9 @@
 
           <article class="catalog-card">
             <a href="/guides/what-to-level-up-first.html">
-              <img
-                class="catalog-card__image"
+              <img class="catalog-card__image"
                 src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=900&q=80"
-                alt="Игровое место"
-              />
+                alt="Игровое место" />
             </a>
 
             <div class="catalog-card__body">
@@ -76,11 +72,9 @@
 
           <article class="catalog-card">
             <a href="/guides/switch-emulation.html">
-              <img
-                class="catalog-card__image"
+              <img class="catalog-card__image"
                 src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=80"
-                alt="Консоль"
-              />
+                alt="Консоль" />
             </a>
 
             <div class="catalog-card__body">
@@ -106,35 +100,23 @@
         </div>
       </div>
 
-      <aside class="catalog-sidebar">
-        <div class="catalog-sidebar__block">
-          <h2 class="catalog-sidebar__title">Типы гайдов</h2>
+      {{> guides-sidebar }}
 
-          <div class="catalog-tags">
-            <a href="#">Для новичков</a>
-            <a href="#">Прохождение</a>
-            <a href="#">Билды</a>
-            <a href="#">Советы</a>
-            <a href="#">Настройки</a>
-            <a href="#">Эмуляция</a>
-          </div>
-        </div>
+      <div class="catalog-sidebar__block">
+        <h2 class="catalog-sidebar__title">О гайдах</h2>
 
-        <div class="catalog-sidebar__block">
-          <h2 class="catalog-sidebar__title">О гайдах</h2>
-
-          <p class="catalog-sidebar__text">
-            В этом разделе собраны практические материалы, которые помогают лучше понять игру,
-            пройти сложный момент или разобраться в настройках.
-          </p>
-        </div>
-        <section class="sidebar-block">
-                    <h2 class="sidebar-block__title">Стать автором</h2>
-                    <p class="article-card__text">
-                        Станьте активным участником проекта CritAttack - добавив пользовательские материалы.
-                    </p>
-                    <a class="button" href="/add-article.html">Добавить статью</a>
-                </section>
+        <p class="catalog-sidebar__text">
+          В этом разделе собраны практические материалы, которые помогают лучше понять игру,
+          пройти сложный момент или разобраться в настройках.
+        </p>
+      </div>
+      <section class="sidebar-block">
+        <h2 class="sidebar-block__title">Стать автором</h2>
+        <p class="article-card__text">
+          Станьте активным участником проекта CritAttack - добавив пользовательские материалы.
+        </p>
+        <a class="button" href="/add-article.html">Добавить статью</a>
+      </section>
       </aside>
     </div>
   </div>

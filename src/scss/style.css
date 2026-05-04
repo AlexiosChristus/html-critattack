@@ -1,7 +1,5 @@
 @charset "UTF-8";
-/* ==============================
-   CSS VARIABLES — основные цвета и размеры
-================================= */
+/* #region VARIABLES — основные цвета и размеры */
 :root {
   --color-dark: #111217;
   --color-dark-alt: #1a1c23;
@@ -16,6 +14,34 @@
   --transition: 0.2s ease;
 }
 
+/* #endregion VARIABLES — основные цвета и размеры */
+/* #region LIGHT THEME — светлая тема */
+html[data-theme=light] {
+  --color-dark: #f1ede7;
+  --color-dark-alt: #faf6ef;
+  --color-card: #fffaf2;
+  --color-accent: #d84a4a;
+  --color-accent-hover: #ef5c5c;
+  --color-text: #bd8b3b;
+  --color-muted: #7b7368;
+  --color-border: #ded6ca;
+}
+
+html[data-theme=light] .article-card,
+html[data-theme=light] .wide-card,
+html[data-theme=light] .sidebar-block,
+html[data-theme=light] .catalog-card,
+html[data-theme=light] .catalog-sidebar__block,
+html[data-theme=light] .post-content,
+html[data-theme=light] .post-info-card,
+html[data-theme=light] .contacts-simple,
+html[data-theme=light] .contact-form,
+html[data-theme=light] .article-form {
+  box-shadow: 0 12px 36px rgba(70, 55, 35, 0.08);
+}
+
+/* #endregion LIGHT THEME — светлая тема */
+/* #region BASE — базовые стили */
 /* Сброс стандартных отступов */
 * {
   box-sizing: border-box;
@@ -49,9 +75,8 @@ img {
   margin-inline: auto;
 }
 
-/* ==============================
-   HEADER — шапка сайта
-================================= */
+/* #endregion BASE — базовые стили */
+/* #region HEADER — шапка сайта */
 /* Фиксирует шапку сверху */
 .header {
   position: sticky;
@@ -123,9 +148,87 @@ img {
   transform: translateY(-2px);
 }
 
-/* ==============================
-   HERO — главный первый экран
-================================= */
+/* Burger button */
+.burger-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-card);
+  cursor: pointer;
+}
+
+/* Burger lines */
+.burger-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+  border-radius: 999px;
+  background-color: var(--color-text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Mobile header */
+@media (max-width: 720px) {
+  .header__inner {
+    position: relative;
+    min-height: 68px;
+    flex-wrap: nowrap;
+    padding-block: 12px;
+  }
+  .burger-button {
+    display: block;
+    margin-left: auto;
+  }
+  .nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 16px;
+    right: 16px;
+    display: none;
+    width: auto;
+    padding: 16px;
+    overflow: visible;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-dark-alt);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+  .nav.is-open {
+    display: block;
+  }
+  .nav__list {
+    width: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .nav__link {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+  .nav__link:hover {
+    background-color: var(--color-card);
+  }
+  .header__button {
+    display: none;
+  }
+  .burger-button.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .burger-button.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-button.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+/* #endregion HEADER — шапка сайта */
+/* #region HERO — главный первый экран */
 /* Отступы hero-секции */
 .hero {
   padding-block: 56px 36px;
@@ -230,9 +333,8 @@ img {
   font-size: 14px;
 }
 
-/* ==============================
-   MAIN LAYOUT — основная сетка
-================================= */
+/* #endregion HERO — главный первый экран */
+/* #region MAIN LAYOUT — основная сетка */
 /* Отступы основной части */
 .main {
   padding-block: 24px 72px;
@@ -278,9 +380,8 @@ img {
   color: var(--color-accent-hover);
 }
 
-/* ==============================
-   ARTICLE CARDS — карточки статей
-================================= */
+/* #endregion MAIN LAYOUT — основная сетка */
+/* #region ARTICLE CARDS — карточки статей */
 /* Сетка карточек */
 .articles-grid {
   display: grid;
@@ -386,9 +487,8 @@ img {
   font-weight: 800;
 }
 
-/* ==============================
-   SIDEBAR — боковая панель
-================================= */
+/* #endregion ARTICLE CARDS — карточки статей */
+/* #region SIDEBAR — боковая панель */
 /* Фиксирует сайдбар при скролле */
 .sidebar {
   position: sticky;
@@ -466,9 +566,8 @@ img {
   font-weight: 700;
 }
 
-/* ==============================
-   FOOTER — нижняя часть сайта
-================================= */
+/* #endregion SIDEBAR — боковая панель */
+/* #region FOOTER — нижняя часть сайта */
 /* Футер сайта */
 .footer {
   padding-block: 36px;
@@ -490,9 +589,8 @@ img {
   font-weight: 800;
 }
 
-/* ==============================
-   RESPONSIVE — адаптация под планшеты
-================================= */
+/* #endregion FOOTER — нижняя часть сайта */
+/* #region RESPONSIVE — адаптация главной страницы */
 @media (max-width: 1000px) {
   /* Перестраивает hero и layout в одну колонку */
   .hero__grid,
@@ -517,17 +615,6 @@ img {
   .header__inner {
     flex-wrap: wrap;
     padding-block: 16px;
-  }
-  /* Переносит меню вниз */
-  .nav {
-    order: 3;
-    width: 100%;
-    overflow-x: auto;
-  }
-  /* Не даёт пунктам меню сжиматься */
-  .nav__list {
-    width: -moz-max-content;
-    width: max-content;
   }
   /* Скрывает кнопку в шапке */
   .header__button {
@@ -555,9 +642,8 @@ img {
     align-items: flex-start;
   }
 }
-/* ==============================
-   POST PAGE — страница материала
-================================= */
+/* #endregion RESPONSIVE — адаптация главной страницы */
+/* #region POST PAGE — страница материала */
 /* Общий блок страницы материала */
 .post-page {
   padding-bottom: 80px;
@@ -936,9 +1022,8 @@ img {
     font-size: 36px;
   }
 }
-/* ==============================
-   ADD ARTICLE PAGE — страница добавления статьи
-================================= */
+/* #endregion POST PAGE — страница материала */
+/* #region ADD ARTICLE PAGE — страница добавления статьи */
 /* Общий блок страницы */
 .add-article {
   padding-block: 56px 80px;
@@ -1099,7 +1184,8 @@ img {
   scroll-margin-top: 110px;
 }
 
-/* #region CONTACTS PAGE */
+/* #endregion ADD ARTICLE PAGE — страница добавления статьи */
+/* #region CONTACTS PAGE — страница контактов */
 /* Страница контактов */
 .contacts-page {
   padding-block: 56px 80px;
@@ -1273,8 +1359,8 @@ img {
     word-break: break-word;
   }
 }
-/* #endregion CONTACTS PAGE */
-/* #region CATALOG PAGE */
+/* #endregion CONTACTS PAGE — страница контактов */
+/* #region CATALOG PAGE — страницы обзоров, статей и гайдов */
 /* Общая страница каталога */
 .catalog-page {
   padding-block: 56px 80px;
@@ -1465,4 +1551,53 @@ img {
     font-size: 21px;
   }
 }
-/* #endregion CATALOG PAGE *//*# sourceMappingURL=style.css.map */
+/* #endregion CATALOG PAGE — страницы обзоров, статей и гайдов */
+/* #region CATALOG FILTER BUTTONS — кнопки фильтра по тегам */
+/* javascript tags buttons*/
+.catalog-tags__button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--color-card);
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.catalog-tags__button:hover,
+.catalog-tags__button.is-active {
+  color: var(--color-text);
+  background-color: rgba(255, 59, 59, 0.18);
+}
+
+.catalog-card[hidden] {
+  display: none;
+}
+
+/* #endregion CATALOG FILTER BUTTONS — кнопки фильтра по тегам */
+/* #region THEME TOGGLE — кнопка смены темы */
+/* Кнопка переключения темы */
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-card);
+  color: var(--color-text);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+/* Наведение на кнопку темы */
+.theme-toggle:hover {
+  border-color: rgba(255, 59, 59, 0.5);
+  transform: translateY(-2px);
+}
+
+/* #endregion THEME TOGGLE — кнопка смены темы *//*# sourceMappingURL=style.css.map */
