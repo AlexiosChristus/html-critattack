@@ -251,13 +251,25 @@ img {
   padding: 32px;
   overflow: hidden;
   border-radius: var(--border-radius);
-  background: linear-gradient(180deg, rgba(17, 18, 23, 0.1), rgba(17, 18, 23, 0.96)), url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80") center/cover;
+  background: linear-gradient(180deg, rgba(17, 18, 23, 0.1), rgba(17, 18, 23, 0.96)), url("/images/posts/article-mafia-3/mafia_iii_hero.jpg") center/cover;
   border: 1px solid var(--color-border);
 }
 
 /* Текст внутри главной карточки */
 .hero-card__content {
   max-width: 620px;
+}
+
+.hero-card:hover .hero-card__image {
+  transform: scale(1.05);
+}
+
+.hero-card__title {
+  transition: color 0.2s ease;
+}
+
+.hero-card:hover .hero-card__title {
+  color: var(--color-accent);
 }
 
 /* Маленький тег категории */
@@ -331,6 +343,18 @@ img {
 .article-card__meta {
   color: var(--color-muted);
   font-size: 14px;
+}
+
+.small-feature:hover .small-feature {
+  transform: scale(1.05);
+}
+
+.small-feature__title {
+  transition: color 0.2s ease;
+}
+
+.small-feature:hover .small-feature__title {
+  color: var(--color-accent);
 }
 
 /* #endregion HERO — главный первый экран */
@@ -487,6 +511,26 @@ img {
   font-weight: 800;
 }
 
+.wide-card__image {
+  width: 260px;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wide-card:hover .wide-card__image {
+  transform: scale(1.05);
+}
+
+.wide-card__title {
+  transition: color 0.2s ease;
+}
+
+.wide-card:hover .wide-card__title {
+  color: var(--color-accent);
+}
+
 /* #endregion ARTICLE CARDS — карточки статей */
 /* #region SIDEBAR — боковая панель */
 /* Фиксирует сайдбар при скролле */
@@ -564,6 +608,15 @@ img {
   color: var(--color-muted);
   font-size: 14px;
   font-weight: 700;
+}
+
+/* плавный скролл панели навигации*/
+html {
+  scroll-behavior: smooth;
+}
+
+.post-content section {
+  scroll-margin-top: 100px;
 }
 
 /* #endregion SIDEBAR — боковая панель */
